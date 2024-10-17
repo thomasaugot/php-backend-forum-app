@@ -21,6 +21,24 @@ elseif (strpos($request_uri, '/post/create') === 0) {
     include '../routes/post.php';
 } elseif (strpos($request_uri, '/post/all') === 0) {
     include '../routes/post.php';
+}
+// Check for comment routes
+elseif (strpos($request_uri, '/comment/create') === 0) {
+    include '../routes/comment.php';
+} elseif (strpos($request_uri, '/comment/all') === 0) {
+    include '../routes/comment.php';
+}
+// Check for like routes
+elseif (strpos($request_uri, '/like/create') === 0) {
+    include '../routes/like.php';
+} elseif (strpos($request_uri, '/like/delete') === 0) {
+    include '../routes/like.php';
+} elseif (strpos($request_uri, '/like/all') === 0) {
+    include '../routes/like.php';
+}
+// Check for profile routes
+elseif (strpos($request_uri, '/profile') !== false) {
+    include '../routes/profile.php';
 } else {
     echo json_encode(["message" => "Invalid request."]);
 }
